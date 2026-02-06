@@ -14,7 +14,7 @@
                     <span class="text-xl font-bold"><?php echo $APP_SHORT_NAME; ?></span>
                 </a>
                 <p class="text-gray-400 text-sm leading-relaxed">
-                    <?php echo $APP_TAGLINE; ?>. Process thousands of rows with GPT-4, Gemini, and more.
+                    <?php echo $APP_TAGLINE; ?>. Process thousands of rows with GPT-5, Gemini, and more.
                 </p>
             </div>
 
@@ -22,13 +22,15 @@
             <div>
                 <h4 class="font-semibold mb-4 text-white">Product</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                    <li><a href="<?php echo $linkPrefix; ?>#features"
+                            class="text-gray-400 hover:text-white transition-colors">Features</a></li>
                     <li><a href="pricing" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
-                    <li><a href="#use-cases" class="text-gray-400 hover:text-white transition-colors">Use Cases</a></li>
+                    <li><a href="<?php echo $linkPrefix; ?>#use-cases"
+                            class="text-gray-400 hover:text-white transition-colors">Use Cases</a></li>
                 </ul>
             </div>
 
-            <!-- Resources -->
+            <!-- Resources
             <div>
                 <h4 class="font-semibold mb-4 text-white">Resources</h4>
                 <ul class="space-y-2 text-sm">
@@ -37,7 +39,7 @@
                     <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Support</a></li>
                 </ul>
             </div>
-
+ -->
             <!-- Legal -->
             <div>
                 <h4 class="font-semibold mb-4 text-white">Legal</h4>
@@ -46,6 +48,7 @@
                             Policy</a></li>
                     <li><a href="terms" class="text-gray-400 hover:text-white transition-colors">Terms of
                             Service</a></li>
+                            <li><a href="support" class="text-gray-400 hover:text-white transition-colors">Support</a></li>
                     <li><a href="refund" class="text-gray-400 hover:text-white transition-colors">Refund Policy</a>
                     </li>
                 </ul>

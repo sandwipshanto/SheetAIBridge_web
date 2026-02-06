@@ -21,7 +21,9 @@ $input = json_decode(file_get_contents('php://input'), true);
 
 if (!$input || !isset($input['price_id'])) {
     http_response_code(400);
-    echo json_encode(['error' => 'Missing price information']);
+    $raw = file_get_contents('php://input');
+    $jsonError = json_last_error_msg();
+    echo json_encode(['error' => "Missing price information. Received Input: '$raw', JSON Error: $jsonError"]);
     exit;
 }
 

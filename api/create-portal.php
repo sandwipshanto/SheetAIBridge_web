@@ -1,40 +1,32 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 
+session_start();
+
+// Protection
+if (!isset($_SESSION['user'])) {
+    die("Unauthorized access.");
+}
+
 // Load .env from one level up
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->safeLoad();
 
-$customerId = null;
+// Config for return URL
+require_once __DIR__ . '/../src/config.php';
+$returnUrl = $_ENV['SITE_URL'] . '/dashboard.php';
 
-// Case 1: GET request (from Add-on link)
-if (isset($_GET['customer_id'])) {
-    $customerId = htmlspecialchars($_GET['customer_id']);
-} 
-// Case 2: POST request (from Website Dashboard)
-elseif (isset($_POST['customer_id'])) {
-    session_start();
-    if (!isset($_SESSION['user'])) {
-        die("Unauthorized access.");
-    }
-    $customerId = $_POST['customer_id'];
-} 
-else {
-    die("Error: Customer ID is missing.");
-}
+// Use SupabaseService to call Edge Function
+require_once __DIR__ . '/../src/services/SupabaseService.php';
+$service = new \App\Services\SupabaseService();
 
-// Initialize Stripe directly to create session
-\Stripe\Stripe::setApiKey($_ENV['STRIPE_SECRET_KEY']);
+// We use the logged-in user's email (google_user_id) to look up the Stripe Customer ID on the backend
+$result = $service->createPortalSession($_SESSION['user']['email'], $returnUrl);
 
-try {
-    $session = \Stripe\BillingPortal\Session::create([
-        'customer' => $customerId,
-        'return_url' => $_ENV['SITE_URL'] . '/dashboard.php',
-    ]);
-    
-    header("Location: " . $session->url);
+if (isset($result['url'])) {
+    header("Location: " . $result['url']);
     exit;
-} catch (Exception $e) {
-    http_response_code(500);
-    echo "Error creating billing portal: " . htmlspecialchars($e->getMessage());
+} else {
+    $error = $result['error'] ?? "Unknown error creating portal session.";
+    die("Error: " . htmlspecialchars($error));
 }

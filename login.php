@@ -18,7 +18,7 @@ $plans = [
 
 $features = [
     'Unlimited AI Processing',
-    'All AI Models (GPT-5, Gemini, etc.)',
+    'All AI Models (GPT-4o, Gemini, etc.)',
     'Background Job Processing',
     'Pause & Resume Jobs',
     'Priority Support',
@@ -156,7 +156,7 @@ $features = [
                     What's included in all plans?
                 </h4>
                 <p class="text-gray-400 text-sm pl-7">All plans include unlimited AI processing, access to all AI models
-                    (GPT-5, Gemini, etc.), background job processing, pause & resume capability, and priority support.
+                    (GPT-4o, Gemini, etc.), background job processing, pause & resume capability, and priority support.
                 </p>
             </div>
 
