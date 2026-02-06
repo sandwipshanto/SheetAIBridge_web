@@ -271,7 +271,7 @@ include __DIR__ . '/src/includes/header.php';
                 </div>
 
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">
-                    Don't Miss This <span class="gradient-text">Lifetime Deal</span>
+                    Don't Miss This <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-200 to-emerald-200">Lifetime Deal</span>
                 </h2>
                 <p class="text-gray-400 mb-8 max-w-lg mx-auto">
                     Lock in lifetime access at this special launch price before it's gone forever.
