@@ -47,7 +47,7 @@ include __DIR__ . '/src/includes/header.php';
             <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16 animate-fade-up"
                 style="animation-delay: 0.3s;">
                 <?php if (!isset($_SESSION['user'])): ?>
-                    <a href="login"
+                    <a href="auth.php"
                         class="group px-8 py-4 bg-[#217c71] hover:bg-[#1a625a] rounded-2xl font-bold text-lg shadow-2xl shadow-teal-500/30 hover:shadow-teal-500/50 transition-all duration-300 btn-glow flex items-center justify-center gap-2">
                         <i data-lucide="zap" class="w-5 h-5"></i>
                         Get Started Free
@@ -453,7 +453,7 @@ include __DIR__ . '/src/includes/header.php';
 
                 <?php if (!isset($_SESSION['user'])): ?>
                     <div class="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="login"
+                        <a href="auth.php"
                             class="group px-10 py-5 bg-[#217c71] hover:bg-[#1a625a] rounded-2xl font-bold text-lg shadow-2xl shadow-teal-500/30 hover:shadow-teal-500/50 transition-all duration-300 btn-glow flex items-center justify-center gap-2">
                             <i data-lucide="zap" class="w-5 h-5"></i>
                             Start Free Trial

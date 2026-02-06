@@ -272,7 +272,7 @@ $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" 
                 <a href="dashboard" class="text-lg text-gray-300 hover:text-white transition-colors py-2">Dashboard</a>
                 <a href="logout" class="text-lg text-gray-300 hover:text-white transition-colors py-2">Log Out</a>
             <?php else: ?>
-                <a href="login" class="w-full py-3 bg-[#217c71] hover:bg-[#1a625a] rounded-xl font-semibold text-center transition-all">
+                <a href="auth.php" class="w-full py-3 bg-[#217c71] hover:bg-[#1a625a] rounded-xl font-semibold text-center transition-all">
                     Get Started
                 </a>
             <?php endif; ?>
@@ -302,9 +302,9 @@ $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" 
                     <a href="dashboard" class="hidden sm:inline-block text-gray-300 hover:text-white transition-colors font-medium">Dashboard</a>
                     <a href="logout" class="hidden sm:inline-block px-5 py-2.5 glass rounded-xl hover:bg-white/10 transition-all font-medium">Log Out</a>
                 <?php else: ?>
-                    <a href="login"
+                    <a href="auth.php"
                         class="hidden sm:inline-block text-gray-300 hover:text-white transition-colors font-medium">Sign In</a>
-                    <a href="login"
+                    <a href="auth.php"
                         class="hidden sm:inline-block px-5 py-2.5 bg-[#217c71] hover:bg-[#1a625a] rounded-xl font-semibold shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40 transition-all btn-glow">
                         Get Started
                     </a>
