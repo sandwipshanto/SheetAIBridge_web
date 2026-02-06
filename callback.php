@@ -32,10 +32,14 @@ if (isset($_GET['code'])) {
             $checkoutIntent = $_SESSION['checkout_intent'];
             unset($_SESSION['checkout_intent']); // Clear the intent
             
-            // Call Stripe checkout API
             require_once __DIR__ . '/src/services/SupabaseService.php';
             $service = new \App\Services\SupabaseService();
             
+            // IMPORTANT: First call getSubscription to ensure user exists in database
+            // The check-entitlement function creates new users automatically if they don't exist
+            $service->getSubscription($_SESSION['user']['email']);
+            
+            // Now create the Stripe checkout session
             $result = $service->createCheckoutSession([
                 'price_id' => $checkoutIntent['priceId'],
                 'plan' => $checkoutIntent['plan'],
