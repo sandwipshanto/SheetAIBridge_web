@@ -206,11 +206,11 @@ include __DIR__ . '/src/includes/header.php';
                     <ul class="space-y-3 text-gray-300 mb-4">
                         <li class="flex items-start gap-3">
                             <i data-lucide="arrow-right" class="w-5 h-5 text-teal-400 mt-0.5 flex-shrink-0"></i>
-                            <span><strong>OpenAI</strong> (GPT-4o, GPT-4.1) - For text generation and analysis</span>
+                            <span><strong>OpenAI</strong> (GPT-5) - For text generation and analysis</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="arrow-right" class="w-5 h-5 text-teal-400 mt-0.5 flex-shrink-0"></i>
-                            <span><strong>Google AI</strong> (Gemini 2.0 Flash) - For text generation and
+                            <span><strong>Google AI</strong> (Gemini 3) - For text generation and
                                 analysis</span>
                         </li>
                         <li class="flex items-start gap-3">

@@ -26,7 +26,7 @@ include __DIR__ . '/src/includes/header.php';
             <!-- Badge -->
             <div class="inline-flex items-center gap-2 px-4 py-2 glass rounded-full mb-8 animate-fade-up">
                 <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                <span class="text-sm text-gray-300">Powered by GPT-4o, Gemini 2.0 Flash & more</span>
+                <span class="text-sm text-gray-300">Powered by GPT-5, Gemini 3 & more</span>
             </div>
 
             <!-- Headline -->
@@ -128,8 +128,8 @@ include __DIR__ . '/src/includes/header.php';
                     <i data-lucide="rocket" class="w-7 h-7 text-indigo-400"></i>
                 </div>
                 <h3 class="text-xl font-bold mb-3">AI-Powered Automation</h3>
-                <p class="text-gray-400 mb-4">Run AI on hundreds of rows in one click. Choose from GPT-4o, GPT-4.1,
-                    Gemini 2.0 Flash, and more models.</p>
+                <p class="text-gray-400 mb-4">Run AI on hundreds of rows in one click. Choose from GPT-5,
+                    Gemini 3, and more models.</p>
                 <ul class="space-y-2 text-sm text-gray-500">
                     <li class="flex items-center gap-2">
                         <i data-lucide="check-circle-2" class="w-4 h-4 text-green-400"></i>
@@ -253,16 +253,16 @@ include __DIR__ . '/src/includes/header.php';
                     <i data-lucide="brain" class="w-7 h-7 text-orange-400"></i>
                 </div>
                 <h3 class="text-xl font-bold mb-3">Multiple AI Models</h3>
-                <p class="text-gray-400 mb-4">Choose the perfect model for your task. From GPT-4o for quality to Gemini
+                <p class="text-gray-400 mb-4">Choose the perfect model for your task. From GPT-5 for quality to Gemini
                     Flash for speed.</p>
                 <ul class="space-y-2 text-sm text-gray-500">
                     <li class="flex items-center gap-2">
                         <i data-lucide="check-circle-2" class="w-4 h-4 text-green-400"></i>
-                        GPT-4o & GPT-4.1
+                        GPT-5
                     </li>
                     <li class="flex items-center gap-2">
                         <i data-lucide="check-circle-2" class="w-4 h-4 text-green-400"></i>
-                        Gemini 2.0 Flash
+                        Gemini 3
                     </li>
                     <li class="flex items-center gap-2">
                         <i data-lucide="check-circle-2" class="w-4 h-4 text-green-400"></i>
