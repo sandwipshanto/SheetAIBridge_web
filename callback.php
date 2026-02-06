@@ -27,6 +27,31 @@ if (isset($_GET['code'])) {
             'picture' => $user_info->picture
         ];
 
+        // Check if user came from a purchase flow
+        if (isset($_SESSION['checkout_intent'])) {
+            $checkoutIntent = $_SESSION['checkout_intent'];
+            unset($_SESSION['checkout_intent']); // Clear the intent
+            
+            // Call Stripe checkout API
+            require_once __DIR__ . '/src/services/SupabaseService.php';
+            $service = new \App\Services\SupabaseService();
+            
+            $result = $service->createCheckoutSession([
+                'price_id' => $checkoutIntent['priceId'],
+                'plan' => $checkoutIntent['plan'],
+                'google_user_id' => $_SESSION['user']['email'],
+                'email' => $_SESSION['user']['email'],
+                'success_url' => $_ENV['SITE_URL'] . "/success.php?session_id={CHECKOUT_SESSION_ID}",
+                'cancel_url' => $_ENV['SITE_URL'] . "/pricing.php"
+            ]);
+            
+            if (isset($result['checkout_url']) && $result['checkout_url']) {
+                header('Location: ' . $result['checkout_url']);
+                exit;
+            }
+            // If checkout fails, fall through to dashboard
+        }
+
         header('Location: dashboard.php');
         exit;
     } catch (Exception $e) {

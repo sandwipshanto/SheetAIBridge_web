@@ -101,7 +101,7 @@ $features = [
                                 Select Plan
                             </button>
                         <?php else: ?>
-                            <a href="login?plan=<?php echo urlencode($plan['id']); ?>&priceId=<?php echo urlencode($plan['priceId']); ?>" class="w-full py-4 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2 <?php echo isset($plan['popular'])
+                            <a href="auth.php?plan=<?php echo urlencode($plan['id']); ?>&priceId=<?php echo urlencode($plan['priceId']); ?>" class="w-full py-4 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2 <?php echo isset($plan['popular'])
                                 ? 'bg-[#217c71] hover:bg-[#1a625a] shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40 btn-glow'
                                 : 'glass hover:bg-white/10 border border-white/10'; ?>">
                                 <i data-lucide="log-in" class="w-5 h-5"></i>

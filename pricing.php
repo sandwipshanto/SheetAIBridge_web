@@ -150,7 +150,7 @@ $features = [
                                             Get Lifetime Access
                                         </button>
                                     <?php else: ?>
-                                        <a href="login"
+                                        <a href="auth.php?plan=<?php echo urlencode($plan['id']); ?>&priceId=<?php echo urlencode($plan['priceId']); ?>"
                                             class="w-full md:w-64 py-4 px-8 bg-gradient-to-r from-[#217c71] to-[#1a625a] hover:from-[#2a8f82] hover:to-[#227a6f] rounded-xl font-bold text-lg shadow-xl shadow-teal-900/20 hover:shadow-teal-500/20 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2">
                                             <i data-lucide="log-in" class="w-5 h-5"></i>
                                             Login to Buy
@@ -216,7 +216,7 @@ $features = [
                                 Select Plan
                             </button>
                         <?php else: ?>
-                            <a href="login" class="w-full py-4 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2 <?php echo (isset($plan['popular']) && $plan['popular'])
+                            <a href="auth.php?plan=<?php echo urlencode($plan['id']); ?>&priceId=<?php echo urlencode($plan['priceId']); ?>" class="w-full py-4 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2 <?php echo (isset($plan['popular']) && $plan['popular'])
                                 ? 'bg-[#217c71] hover:bg-[#1a625a] shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40 btn-glow'
                                 : 'glass hover:bg-white/10 border border-white/10'; ?>">
                                 <i data-lucide="log-in" class="w-5 h-5"></i>
