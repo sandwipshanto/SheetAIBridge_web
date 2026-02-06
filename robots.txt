@@ -1,0 +1,15 @@
+# robots.txt for Sheet AI Assistant
+# Update with your actual domain before deploying
+
+User-agent: *
+Allow: /
+
+# Disallow private/admin pages
+Disallow: /api/
+Disallow: /dashboard
+Disallow: /callback
+Disallow: /success
+Disallow: /logout
+
+# Sitemap location (update domain)
+Sitemap: https://sheetai.app/sitemap.php
