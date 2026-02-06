@@ -4,6 +4,10 @@ require_once __DIR__ . '/../config.php';
 
 // Get current page URL for meta tags
 $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+// Determine if we are on the homepage
+$isHomepage = (basename($_SERVER['PHP_SELF']) === 'index.php' || $_SERVER['REQUEST_URI'] === '/');
+$linkPrefix = $isHomepage ? '' : 'index';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -264,8 +268,8 @@ $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" 
         </div>
         <div class="flex flex-col gap-4">
             <a href="index" class="text-lg text-gray-300 hover:text-white transition-colors py-2">Home</a>
-            <a href="#features" class="text-lg text-gray-300 hover:text-white transition-colors py-2" onclick="toggleMobileMenu()">Features</a>
-            <a href="#use-cases" class="text-lg text-gray-300 hover:text-white transition-colors py-2" onclick="toggleMobileMenu()">Use Cases</a>
+            <a href="<?php echo $linkPrefix; ?>#features" class="text-lg text-gray-300 hover:text-white transition-colors py-2" onclick="toggleMobileMenu()">Features</a>
+            <a href="<?php echo $linkPrefix; ?>#use-cases" class="text-lg text-gray-300 hover:text-white transition-colors py-2" onclick="toggleMobileMenu()">Use Cases</a>
             <a href="pricing" class="text-lg text-gray-300 hover:text-white transition-colors py-2">Pricing</a>
             <hr class="border-white/10 my-2">
             <?php if (isset($_SESSION['user'])): ?>
@@ -292,8 +296,8 @@ $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" 
             </a>
 
             <div class="hidden md:flex items-center gap-8">
-                <a href="#features" class="text-gray-300 hover:text-white transition-colors font-medium">Features</a>
-                <a href="#use-cases" class="text-gray-300 hover:text-white transition-colors font-medium">Use Cases</a>
+                <a href="<?php echo $linkPrefix; ?>#features" class="text-gray-300 hover:text-white transition-colors font-medium">Features</a>
+                <a href="<?php echo $linkPrefix; ?>#use-cases" class="text-gray-300 hover:text-white transition-colors font-medium">Use Cases</a>
                 <a href="pricing" class="text-gray-300 hover:text-white transition-colors font-medium">Pricing</a>
             </div>
 
